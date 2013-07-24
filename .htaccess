@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /children-schedule/
+RewriteCond %{ENV:REDIRECT_APP_PATH} !^$
+RewriteRule ^(.*)$ - [E=APP_PATH:%{ENV:REDIRECT_APP_PATH}]
+RewriteCond %{ENV:APP_PATH} ^$
+RewriteRule ^(.*)$ - [E=APP_PATH:/$1]
+RewriteCond $1 !^(index\.php|img|css|js|robots\.txt|favicon\.ico)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [L]

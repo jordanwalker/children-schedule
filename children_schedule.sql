@@ -56,21 +56,6 @@ CREATE TABLE `child` (
 
 /*Data for the table `child` */
 
-/*Table structure for table `day` */
-
-DROP TABLE IF EXISTS `day`;
-
-CREATE TABLE `day` (
-  `id` int(11) NOT NULL,
-  `arrival` datetime NOT NULL,
-  `departure` datetime NOT NULL,
-  `datetime` datetime NOT NULL,
-  `summary` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `day` */
-
 /*Table structure for table `eat` */
 
 DROP TABLE IF EXISTS `eat`;
