@@ -7,7 +7,7 @@ class Welcome extends MY_Controller {
     }
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('landing/view_welcome',$this->data);
 	}
 	
 	public function set(){}
