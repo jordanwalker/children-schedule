@@ -8,7 +8,7 @@ class Supplies extends MY_Controller {
     }
 	public function index()
 	{
-		$this->load->view('view_welcome');
+		$this->load->view('view_welcome',$this->data);
 	}
 	public function set(){}
 	public function get(){}
