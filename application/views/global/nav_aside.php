@@ -1,4 +1,4 @@
-<h4 class="media-heading">Full Name</h4>
+<h4 class="media-heading"><?php echo $user->first_name.'&nbsp;'.$user->last_name; ?></h4>
 <img alt="" class="media-object" src="<?php echo base_url(); ?>assets/ux/img/tmp/160x120.gif" />
 
 <ul class="nav nav-list">
@@ -6,28 +6,28 @@
 
 <?php
 $username = $this->uri->segment(1);
-$uri = $this->uri->segment(1);
+$uri = $this->uri->segment(2);
 // MAIN
 $main_nav = array(
 	'dashboard' => array(
 		'icon'=>'icon-home',
 		'title'=>'Dashboard',
-		'url'=>''
+		'url'=>'admin'
 	),
 	'activity' => array(
 		'icon'=>'icon-random',
 		'title'=>'Activity',
-		'url'=>''
+		'url'=>'admin/activity'
 	),
 	'profile' => array(
 		'icon'=>'icon-user',
 		'title'=>'Profile',
-		'url'=>'ux/profile'
+		'url'=>'admin/profile'
 	),
 	'settings' => array(
 		'icon'=>'icon-cog',
 		'title'=>'Settings',
-		'url'=>'ux/settings'
+		'url'=>'admin/settings'
 	),	
 );
 foreach($main_nav as $m => $main){
@@ -108,7 +108,7 @@ foreach($profile_nav as $p => $profile){
 }
 
 
-echo '<li class="nav-header"><p class="text-success">&middot; add child</p></li>';
+echo '<li class="nav-header"><a href="'.base_url().'child/add" class="text-success">&middot; add child</a></li>';
 
 // HELP
 echo '<li class="divider"></li>';

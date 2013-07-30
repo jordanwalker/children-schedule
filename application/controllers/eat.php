@@ -7,7 +7,7 @@ class Eat extends MY_Controller {
     }
 	public function index()
 	{
-		$this->load->view('view_welcome',$this->data);
+		$this->load->view('child/view_eat',$this->data);
 	}
 	public function set(){}
 	public function get(){}

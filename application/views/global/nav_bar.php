@@ -6,10 +6,8 @@
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> 
 			</a> 
-			<div class="btn-group pull-left">
-				<a class="btn btn-small btn-inverse"><i class="icon-time icon-white"></i>&nbsp;23:15</a>
-				<a class="btn btn-small btn-inverse"><i class="icon-calendar icon-white"></i>Monday, August 3rd 2013</a>
-			</div>
+			<a class="brand"><small>&nbsp;9:15pm Monday, August 3rd 2013</small></a>
+			
 			<div class="nav-collapse">
 				<!--<ul class="nav">
 					<li>
@@ -89,9 +87,9 @@
 					<li>
 					<?php
 					if(@$user): 					
-						echo anchor('auth/home/logout','logout'); 
+						echo anchor('auth/logout','logout'); 
 					else:
-						echo anchor('auth/home/login','<i class="icon-lock icon-white"></i>','class="btn btn-inverse"'); 
+						echo anchor('auth/login','<i class="icon-lock icon-white"></i>'); 
 					endif;
 					?>
 					</li>

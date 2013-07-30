@@ -9,6 +9,13 @@ class Child extends MY_Controller {
 	{
 		$this->load->view('view_welcome',$this->data);
 	}
+	
+	public function add(){
+		/* template */
+		$this->data['head_title'] = "Add";
+		$this->load->view('child/view_add',$this->data);
+	}
+	
 	public function set(){}
 	public function get(){}
 }

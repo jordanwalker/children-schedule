@@ -2,3 +2,7 @@
 	path = bootstrap
 	url = https://github.com/twitter/bootstrap.git
 	branch = master
+[submodule "assets/bootstrap-timepicker"]
+	path = assets/bootstrap-timepicker
+	url = https://github.com/jdewit/bootstrap-timepicker.git
+	branch = master

@@ -3,9 +3,10 @@
   <div class="container-narrow">
 
       <div class="jumbotron">
-        <h1>Super awesome marketing speak!</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <a class="btn btn-large btn-success" href="#">Sign up today</a>
+        <h1>Maintain children schedules</h1>
+        <p class="lead">Utilize this tool to maintain your child or children&rsquo;s schedule. This self-reporting application creates patterns of behavior for parents to analyze.</p>
+        <?php echo anchor('auth/sign_up','Sign up today','class="btn btn-large btn-success"');?>
+		
       </div>
 
       <hr>

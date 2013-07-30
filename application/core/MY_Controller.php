@@ -5,8 +5,12 @@ class MY_Controller extends CI_Controller {
 	
 	function __construct() {
         parent::__construct();
-		echo "MY Controller";
-		$this->load->helper('url');
+		
+		#ION AUTH
+		if ($this->ion_auth->logged_in()) {
+			$this->data['user'] = $this->ion_auth->user()->row();
+		}
+	
 		#BOOTSTRAP
 		/* css */
 		$this->data['css'] = array(
@@ -24,5 +28,5 @@ class MY_Controller extends CI_Controller {
 		$this->data['nav_bar'] = $this->load->view('global/nav_bar', $this->data, TRUE);
 		$this->data['nav_aside'] = $this->load->view('global/nav_aside', $this->data, TRUE);
 		$this->data['html_close'] = $this->load->view('global/html_end',$this->data,TRUE);
-    }
+	}
 }
