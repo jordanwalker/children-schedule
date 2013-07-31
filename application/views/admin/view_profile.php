@@ -184,13 +184,6 @@
 						</div>
 					</fieldset>
 				</form>
-				
-				
-				
-				
-				
-				
-				
 			</div>
 		</div>
 	</section>

@@ -7,7 +7,7 @@ class Health extends MY_Controller {
     }
 	public function index()
 	{
-		$this->load->view('view_welcome',$this->data);
+		$this->load->view('child/view_health',$this->data);
 	}
 	public function set(){}
 	public function get(){}

@@ -6,3 +6,6 @@
 	path = assets/bootstrap-timepicker
 	url = https://github.com/jdewit/bootstrap-timepicker.git
 	branch = master
+[submodule "assets/bootstrap"]
+	path = assets/bootstrap
+	url = https://github.com/twbs/bootstrap.git

@@ -1,5 +1,5 @@
 <h4 class="media-heading"><?php echo $user->first_name.'&nbsp;'.$user->last_name; ?></h4>
-<img alt="" class="media-object" src="<?php echo base_url(); ?>assets/ux/img/tmp/160x120.gif" />
+<!--<img alt="" class="media-object" src="<?php echo base_url(); ?>assets/ux/img/tmp/160x120.gif" />-->
 
 <ul class="nav nav-list">
 	<li class="nav-header">YOUR ACCOUNT</li>
@@ -63,6 +63,11 @@ $profile_nav = array(
 		'title'=>'Sleep',
 		'url'=>'sleep'
 	),
+	'play' => array(
+		'icon'=>'icon-play',
+		'title'=>'Play',
+		'url'=>'play'
+	),
 	'change' => array(
 		'icon'=>'icon-refresh',
 		'title'=>'Change',
@@ -78,7 +83,7 @@ $profile_nav = array(
 		'title'=>'Health',
 		'url'=>'health'
 	),
-	'contacts' => array(
+	/*'contacts' => array(
 		'icon'=>'icon-certificate',
 		'title'=>'Contacts',
 		'url'=>''
@@ -92,7 +97,7 @@ $profile_nav = array(
 		'icon'=>'icon-music',
 		'title'=>'Lullabies',
 		'url'=>''
-	)
+	)*/
 );
 foreach($profile_nav as $p => $profile){
 	// check active
@@ -116,7 +121,7 @@ $help_nav = array(
 	'help' => array(
 		'icon'=>'icon-info-sign',
 		'title'=>'Help',
-		'url'=>'ux/help'
+		'url'=>'help'
 	),
 );
 foreach($help_nav as $h => $help)
@@ -132,7 +137,7 @@ foreach($help_nav as $h => $help)
 	echo anchor($help['url'],'<i class="'.$white.$help['icon'].'"></i> '.$help['title'].'');
 	echo '</li>';
 }
-
+/*
 // TEMPLATE
 echo '<li class="nav-header">Templates</li>';
 $extra_nav = array(
@@ -206,7 +211,7 @@ foreach($extra_nav as $e => $extra)
 	echo anchor($extra['url'],'<i class="'.$white.$extra['icon'].'"></i> '.$extra['title'].'');
 	echo '</li>';
 }
-
+*/
 ?>
 </ul>
 

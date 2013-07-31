@@ -6,36 +6,38 @@
 					<?php echo $nav_aside; ?>
 				</div>
 				<div class="span9">
-					<h1>
-						Dashboard
-					</h1>
+					<h1>Dashboard</h1>
 					<div class="hero-unit">
 						<h1>
 							Welcome!
 						</h1>
-						<p>
-							Get started with our quick tour.
-						</p>
+						<p class="lead">Get started with a quick interactive tour.</p>
 						<p>
 							<a href="help" class="btn btn-primary btn-large">Start Tour</a> <a class="btn btn-large">No Thanks</a>
 						</p>
 					</div>
+					<h2>
+						Schedule
+					</h2>
+					
 					<div class="well summary">
 						<ul>
 							<li>
-								<a href="#"><span class="count">3</span> Projects</a>
+								<a href="#"><span class="count">0</span> Projects</a>
 							</li>
 							<li>
-								<a href="#"><span class="count">27</span> Tasks</a>
+								<a href="#"><span class="count">0</span> Tasks</a>
 							</li>
 							<li>
-								<a href="#"><span class="count">7</span> Messages</a>
+								<a href="#"><span class="count">0</span> Messages</a>
 							</li>
 							<li class="last">
-								<a href="#"><span class="count">5</span> Files</a>
+								<a href="#"><span class="count">0</span> Files</a>
 							</li>
 						</ul>
 					</div>
+					
+					
 					<h2>
 						Recent Activity
 					</h2>
