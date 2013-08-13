@@ -24,28 +24,30 @@
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="name">Name</label>
+							<label class="control-label" for="name"><span class="text-error">*</span>Name</label>
 							<div class="controls">
 								<input type="text" class="span3" id="name" value="" />
+								<p class="help-block"></p>
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="yyyy">Birthday</label>
+							<label class="control-label" for="yyyy"><span class="text-error">*</span>Birthday</label>
 							<div class="controls">
 								<input class="span1" id="yyyy" type="text" placeholder="year" value="" maxlength="4" />
 								<input class="span1" id="mm" type="text" placeholder="month" value="" maxlength="2" />
 								<input class="span1" id="dd" type="text" placeholder="day" value="" maxlength="2" />
-								<p class="help-block">2001/01/29</p>
+								<p class="help-block"></p>
 							</div>
 						</div>
 						<div class="control-group">
-							<label class="control-label" for="gender">Gender</label>
+							<label class="control-label" for="gender"><span class="text-error">*</span>Gender</label>
 							<div class="controls">
 								<select name="Gender" id="gender"> 
 									<option value="" selected="selected">Boy / Girl</option> 
 									<option value="boy">Boy</option> 
 									<option value="girl">Girl</option> 
-								</select>	
+								</select>
+								<p class="help-block"></p>									
 							</div>
 						</div>
 						<div class="control-group">

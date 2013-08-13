@@ -9,6 +9,7 @@ $('document').ready(function(){
 	$('.btn-create-child').on('click',function(e){
 		console.log("create child");
 		e.preventDefault;
+		var error = false;
 		var name = $("#name").val();
 		var yyyy_birthday = $("#yyyy").val();
 		var mm_birthday = $("#mm").val();
@@ -20,31 +21,47 @@ $('document').ready(function(){
 		var weight = $("#weight").val();
 		var biography = $("#biography").val();
 		
+		// validate required
+		if(name == '' || name == null){
+			error = true;
+			$('#name').parents('div.control-group').addClass('error');
+		}
+		if(yyyy_birthday == '' || mm_birthday == '' || dd_birthday == ''){
+			error = true;
+			$('#yyyy').parents('div.control-group').addClass('error');
+		}
+		if(gender == ''){
+			error = true;
+			$('#gender').parents('div.control-group').addClass('error');
+		}
+	
 		if ($('#public_profile').is(":checked")){
 			var public_profile = 1;
 		} else {
 			var public_profile = 0;
 		}
-
-		// request to create child
-		$.ajax({
-		  type: "POST",
-		  url: BASE_URL + "api/child/create/",
-		  data: { 
-			'key':'$v^Y2Il4%lC%xIA7HCxYmL(J#qSA3SJ2fQk2ICjf',
-			'name':name,
-			'birthday':yyyy_birthday+'/'+mm_birthday+'/'+dd_birthday,
-			'gender':gender,
-			'eye_color':eye_color,
-			'hair_color':hair_color,
-			'height':height,
-			'weight':weight,
-			'biography':biography,
-			'public':public_profile,
-			}
-		}).done(function( msg ) {
-		  console.log(msg);
-		});
+		
+		if(!error){
+			// request to create child
+			$.ajax({
+			  type: "POST",
+			  url: BASE_URL + "api/child/create/",
+			  data: { 
+				'key':'$v^Y2Il4%lC%xIA7HCxYmL(J#qSA3SJ2fQk2ICjf',
+				'name':name,
+				'birthday':yyyy_birthday+'/'+mm_birthday+'/'+dd_birthday,
+				'gender':gender,
+				'eye_color':eye_color,
+				'hair_color':hair_color,
+				'height':height,
+				'weight':weight,
+				'biography':biography,
+				'public':public_profile,
+				}
+			}).done(function( msg ) {
+			  console.log(msg);
+			});
+		}
 	});
 	
 	
