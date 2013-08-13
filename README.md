@@ -1,6 +1,10 @@
 sign up
+<br />
 login
-forgot Password
-change Password
+<br />
+forgot password
+<br />
+change password
+<br />
 
 add child
