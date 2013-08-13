@@ -7,115 +7,37 @@
 			</div>
 			<div class="span9">
 				<h1>Child | Eat</h1>
-					<table class="table table-bordered table-striped">
-						<thead>
-							<tr>
-								<th>
-									Meal
-								</th>
-								<th>
-									Item
-								</th>
-								<th>
-									Type
-								</th>
-								<th>
-									Amount
-								</th>
-								
-								<th>
-									Time
-								</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>
-									Nike.com Redesign
-								</td>
-								<td>
-									Monsters Inc
-								</td>
-								<td>
-									New Task
-								</td>
-								<td>
-									4 days ago
-								</td>
-								<td>
-									<a href="#" class="view-link">View</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Nike.com Redesign
-								</td>
-								<td>
-									Monsters Inc
-								</td>
-								<td>
-									New Message
-								</td>
-								<td>
-									5 days ago
-								</td>
-								<td>
-									<a href="#" class="view-link">View</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Nike.com Redesign
-								</td>
-								<td>
-									Monsters Inc
-								</td>
-								<td>
-									New Project
-								</td>
-								<td>
-									5 days ago
-								</td>
-								<td>
-									<a href="#" class="view-link">View</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Twitter Server Consulting
-								</td>
-								<td>
-									Bad Robot
-								</td>
-								<td>
-									New Task
-								</td>
-								<td>
-									6 days ago
-								</td>
-								<td>
-									<a href="#" class="view-link">View</a>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Childrens Book Illustration
-								</td>
-								<td>
-									Evil Genius
-								</td>
-								<td>
-									New Message
-								</td>
-								<td>
-									9 days ago
-								</td>
-								<td>
-									<a href="#" class="view-link">View</a>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>Meal</th>
+							<th>Item</th>
+							<th>Amount</th>
+							<th>Time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Breakfast</td>
+							<td>Cheerios</td>
+							<td>1 cup</td>
+							<td>08/12/2013 6:12am</td>
+						</tr>
+						<tr>
+							<td>Breakfast</td>
+							<td>Blueberry</td>
+							<td>4 pieces</td>
+							<td>08/12/2013 7:30am</td>
+						</tr>
+						<tr>
+							<td>Snack</td>
+							<td>Cracker</td>
+							<td>2 pieces</td>
+							<td>08/12/2013 10:21am</td>
+						</tr>
+						
+					</tbody>
+				</table>
 				
 				
 				

@@ -2,18 +2,16 @@
 require APPPATH.'/libraries/REST_Controller.php';
 
 class Child extends REST_Controller {
-	/*
-	 * create
-	 */
 	function __construct() {
         parent::__construct();
-		
-    }
+	}
+	/*
+	 * CREATE
+	 */
 	function create_post(){
 		$package = array(
 			'id'=>'',
 			'unique'=>'123w',
-			//'key'=>$this->post('X-API-KEY'),
 			'name'=>$this->post('name'),
 			'birthday'=>$this->post('birthday'),
 			'gender'=>$this->post('gender'),

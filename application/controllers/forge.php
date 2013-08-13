@@ -202,7 +202,6 @@ class Forge extends MY_Controller {
 		$database_objects = array(
 			'id'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
 			'id_child'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => false),
-			'allergies'=> array('type'=>'varchar','constraint'=>'255','null'=>false),
 			'start'=>array('type'=>'datetime','null'=>false),
 			'stop'=>array('type'=>'datetime','null'=>false),
 			'temperature' => array('type'=>'varchar','constraint'=>'255','null'=>false),
