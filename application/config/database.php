@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'children_schedule';
+$db['default']['password'] = 'root';
+$db['default']['database'] = '';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
@@ -63,6 +63,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['children_schedule']['hostname'] = 'localhost';
+$db['children_schedule']['username'] = 'root';
+$db['children_schedule']['password'] = 'root';
+$db['children_schedule']['database'] = 'children_schedule';
+$db['children_schedule']['dbdriver'] = 'mysql';
+$db['children_schedule']['dbprefix'] = '';
+$db['children_schedule']['pconnect'] = TRUE;
+$db['children_schedule']['db_debug'] = TRUE;
+$db['children_schedule']['cache_on'] = FALSE;
+$db['children_schedule']['cachedir'] = '';
+$db['children_schedule']['char_set'] = 'utf8';
+$db['children_schedule']['dbcollat'] = 'utf8_general_ci';
+$db['children_schedule']['swap_pre'] = '';
+$db['children_schedule']['autoinit'] = TRUE;
+$db['children_schedule']['stricton'] = FALSE;
 
 
 /* End of file database.php */

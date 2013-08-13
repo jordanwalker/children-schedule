@@ -1,19 +1,113 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Forge extends MY_Controller {
-	function __construct()
-    {
+	function __construct(){
         parent::__construct();
+        $this->load->dbforge();
+       
     }
-	public function index()
-	{
-		$this->load->view('welcome_message');
+    
+	public function index(){
+		echo "forge:";
 	}
 	
-	public function set(){}
-	public function get(){}
 	
-	// build the table
+	
+	public function build($name=null){
+
+		// 1. build the database
+		$forge_database = $this->_create_database($name);
+		if($forge_database){
+			echo "database successfully created";
+		}else{
+			echo "error creating database";
+		}
+		echo "<br/>";
+		
+		// 2. build the tables
+		$db_config = $this->load->database('children_schedule', TRUE);
+		
+		#change
+		$forge_change = $this->forge_change();
+		if($forge_change){
+			echo "change table created";
+		}else{
+			echo "error change table ";
+		}
+		echo "<br/>";
+		
+		#child
+		$forge_child = $this->forge_child();
+		if($forge_child){
+			echo "child table created";
+		}else{
+			echo "error child table ";
+		}
+		echo "<br/>";
+		
+		#eat
+		$forge_eat = $this->forge_eat();
+		if($forge_eat){
+			echo "eat table created";
+		}else{
+			echo "error eat table ";
+		}
+		echo "<br/>";
+		
+		#food
+		$forge_food = $this->forge_food();
+		if($forge_food){
+			echo "food table created";
+		}else{
+			echo "error food table ";
+		}
+		echo "<br/>";
+		
+		#health
+		$forge_health = $this->forge_health();
+		if($forge_health){
+			echo "health table created";
+		}else{
+			echo "error health table ";
+		}
+		echo "<br/>";
+		
+		#sleep
+		$forge_sleep = $this->forge_sleep();
+		if($forge_sleep){
+			echo "sleep table created";
+		}else{
+			echo "error sleep table ";
+		}
+		echo "<br/>";
+		
+		#watch
+		$forge_watch = $this->forge_watch();
+		if($forge_watch){
+			echo "watch table created";
+		}else{
+			echo "error watch table ";
+		}
+		echo "<br/>";
+	}
+	
+	/*
+	 * DATABASE
+	*/
+	
+	// create database
+	private function _create_database($db_name){
+		return $this->dbforge->create_database($db_name);
+	}
+	// drop database
+	public function drop_database($db_name){
+		return $this->dbforge->drop_database($db_name);
+	}
+	
+	/*
+	 * TABLE
+	 */
+	
 	# change
 	private function forge_change(){
 		$this->load->dbforge();
@@ -27,11 +121,11 @@ class Forge extends MY_Controller {
 		$this->dbforge->add_field($database_objects);
 		$this->dbforge->add_key('id');
 		$this->dbforge->add_key('id_child');
-		$this->dbforge->create_table('change',TRUE);
+		return $this->dbforge->create_table('change',TRUE);
 	}
 	
 	# child
-	function forge_child(){
+	private function forge_child(){
 		$this->load->dbforge();
 		$database_objects = array(
 			'id'=>array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
@@ -48,11 +142,11 @@ class Forge extends MY_Controller {
 		);
 		$this->dbforge->add_field($database_objects);
 		$this->dbforge->add_key('id');
-		$this->dbforge->create_table('child',TRUE);
+		return $this->dbforge->create_table('child',TRUE);
 	}
 	
 	# eat
-	function forge_eat(){
+	private function forge_eat(){
 		$this->load->dbforge();
 		$database_objects = array(
 			'id'=>array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
@@ -66,66 +160,90 @@ class Forge extends MY_Controller {
 		$this->dbforge->add_key('id');
 		$this->dbforge->add_key('id_food');
 		$this->dbforge->add_key('id_child');
-		$this->dbforge->create_table('eat',TRUE);
+		return $this->dbforge->create_table('eat',TRUE);
 	}
 	
+	# food
+	private function forge_food(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'			=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'id_child'		=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => false),
+			'item'			=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'quantity'		=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'arrival'		=> array('type'=>'datetime','null'=>false),
+			'departure'		=> array('type'=>'datetime','null'=>false),
+			'instructions'	=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+		);
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+		$this->dbforge->add_key('id_child');
+		return $this->dbforge->create_table('food',TRUE);
+	}	
+
+	#health
+	private function forge_health(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'			=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'id_child'		=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => false),
+			'allergies'		=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'medication'	=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'pediatrician'	=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'duration'		=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+		);
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+		$this->dbforge->add_key('id_child');
+		return $this->dbforge->create_table('health',TRUE);
+	}
 	
-/*
-E=InnoDB DEFAULT CHARSET=latin1;
+	#sleep
+	private function forge_sleep(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'id_child'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => false),
+			'allergies'=> array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'start'=>array('type'=>'datetime','null'=>false),
+			'stop'=>array('type'=>'datetime','null'=>false),
+			'temperature' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'humidity' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+		);
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+		$this->dbforge->add_key('id_child');
+		return $this->dbforge->create_table('sleep',TRUE);
+	}	
+	
+	#watch
+	private function forge_watch(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'id_child'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => false),
+			'signs' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'symptoms' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'events' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'oral_intake' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+		);
+		
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+		$this->dbforge->add_key('id_child');
+		return $this->dbforge->create_table('watch',TRUE);
+	}
 
-CREATE TABLE `food` (
-  `id` int(12) NOT NULL,
-  `child_id` int(12) NOT NULL,
-  `item` varchar(255) NOT NULL,
-  `quantity` varchar(255) NOT NULL,
-  `arrival` time NOT NULL,
-  `departure` time NOT NULL,
-  `instructions` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `health` (
-  `id` int(12) NOT NULL DEFAULT '0',
-  `child_id` int(12) NOT NULL,
-  `allergies` varchar(255) NOT NULL,
-  `medication` varchar(255) NOT NULL,
-  `pediatrician` varchar(255) NOT NULL,
-  `duration` varchar(15) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `child_id` (`child_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `sleep` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
-  `child_id` int(12) NOT NULL,
-  `start` time NOT NULL,
-  `stop` time NOT NULL,
-  `temperature` varchar(5) NOT NULL,
-  `humidity` varchar(5) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `child_id` (`child_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `supplies` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
-  `child_id` int(12) NOT NULL,
-  `item` varchar(255) NOT NULL,
-  `quantity` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `child_id` (`child_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `watch` (
-  `id` int(12) NOT NULL AUTO_INCREMENT,
-  `child_id` int(12) NOT NULL,
-  `signs` varchar(255) NOT NULL,
-  `symptoms` varchar(255) NOT NULL,
-  `events` varchar(255) NOT NULL,
-  `oral_intake` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `child_id` (`child_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-*/
-
+	/*
+	 * TABLE UTILITY
+	 */
+	private function _drop($table_name){
+		return $this->dbforge->drop_table($table_name);
+	}
+	private function _rename($old_table_name, $new_table_name){
+		return $this->dbforge->rename_table($old_table_name, $new_table_name);
+	}
 }
 
 /* End of file watch.php */
