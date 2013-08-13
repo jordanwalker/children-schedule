@@ -11,8 +11,6 @@ class Forge extends MY_Controller {
 		echo "forge:";
 	}
 	
-	
-	
 	public function build($name=null){
 
 		// 1. build the database

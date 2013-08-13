@@ -14,13 +14,13 @@ class MY_Controller extends CI_Controller {
 		#BOOTSTRAP
 		/* css */
 		$this->data['css'] = array(
-			base_url().'bootstrap/docs/assets/css/bootstrap.css',
-			base_url().'bootstrap/docs/assets/css/bootstrap-responsive.css',
+			base_url().'assets/bootstrap/docs/assets/css/bootstrap.css',
+			base_url().'assets/bootstrap/docs/assets/css/bootstrap-responsive.css',
 		);
 		/* js */
 		$this->data['script'] = array(
-			base_url().'bootstrap/docs/assets/js/jquery.js',
-			base_url().'bootstrap/docs/assets/js/bootstrap.min.js',
+			base_url().'assets/jquery/dist/jquery.min.js',
+			base_url().'assets/bootstrap/docs/assets/js/bootstrap.min.js',
 			base_url().'assets/js/main.js',
 		);
 		/* template */
