@@ -23,6 +23,7 @@ class MY_Controller extends CI_Controller {
 			base_url().'assets/bootstrap/docs/assets/js/bootstrap.min.js',
 			base_url().'assets/js/main.js',
 		);
+		
 		/* template */
 		$this->data['head_title'] = array();
 		$this->data['html_head'] = $this->load->view('global/html_head',$this->data,TRUE);
