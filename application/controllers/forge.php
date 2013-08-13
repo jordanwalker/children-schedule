@@ -38,11 +38,13 @@ class Forge extends MY_Controller {
 			'unique'=>array('type'=>'varchar','constraint'=>'11','null'=>false),
 			'name'=>array('type'=>'varchar','constraint'=>'255','null'=>false),
 			'birthday'=>array('type'=>'datetime','null'=>false),
+			'gender'=>array('type'=>'varchar','constraint'=>'6','null'=>false),
 			'eye_color'=>array('type'=>'varchar','constraint'=>'50','null'=>false),
 			'hair_color'=>array('type'=>'varchar','constraint'=>'50','null'=>false),
-			'race'=>array('type'=>'varchar','constraint'=>'255','null'=>false),
-			'gender'=>array('type'=>'varchar','constraint'=>'6','null'=>false),
-			'social'=>array('type'=>'int','constraint'=>'9','null'=>false),
+			'height'=>array('type'=>'varchar','constraint'=>'50','null'=>false),
+			'weight'=>array('type'=>'varchar','constraint'=>'50','null'=>false),
+			'biography'=>array('type'=>'varchar','constraint'=>'50','null'=>false),
+			'public'=>array('type'=>'int','constraint'=>'1','null'=>false),
 		);
 		$this->dbforge->add_field($database_objects);
 		$this->dbforge->add_key('id');

@@ -5,6 +5,8 @@
 	<li class="nav-header">YOUR ACCOUNT</li>
 
 <?php
+
+
 $username = $this->uri->segment(1);
 $uri = $this->uri->segment(2);
 // MAIN
@@ -48,8 +50,10 @@ foreach($main_nav as $m => $main){
 	echo '</li>';
 }
 echo '<li class="divider"></li>';
+echo '<li class="nav-header"><a href="'.base_url().'child/add" class="text-success">&middot; add child</a></li>';
 
 // ACCOUNT
+
 echo '<li class="nav-header">Child Name</li>';
 echo '<img alt="" class="media-object" src="'.base_url().'assets/ux/img/tmp/160x120.gif" />';
 $profile_nav = array(
@@ -99,6 +103,7 @@ $profile_nav = array(
 		'url'=>''
 	)*/
 );
+
 foreach($profile_nav as $p => $profile){
 	// check active
 	if( strcmp($uri,$p) == 0 ){
@@ -108,12 +113,11 @@ foreach($profile_nav as $p => $profile){
 		echo '<li>';
 		$white = "";
 	}
-	echo anchor($profile['url'],'<i class="'.$white.$profile['icon'].'"></i> '.$profile['title'].'');
+	echo anchor('child/'.$profile['url'],'<i class="'.$white.$profile['icon'].'"></i> '.$profile['title'].'');
 	echo '</li>';
 }
 
 
-echo '<li class="nav-header"><a href="'.base_url().'child/add" class="text-success">&middot; add child</a></li>';
 
 // HELP
 echo '<li class="divider"></li>';

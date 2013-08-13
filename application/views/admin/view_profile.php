@@ -28,29 +28,29 @@
 						<div class="control-group">
 							<label class="control-label" for="input01">Name</label>
 							<div class="controls">
-								<input type="text" class="input-xlarge" id="input01" value="John Smith" />
+								<input type="text" class="input-xlarge" id="input01" value="<?php echo $user->first_name.' '.$user->last_name;?>" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="inp_company">Company</label>
 							<div class="controls">
-								<input type="text" class="input-xlarge" id="inp_company" value="My Company" />
+								<input type="text" class="input-xlarge" id="inp_company" value="<?php echo $user->company; ?>" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="input01">Phone</label>
 							<div class="controls">
-								<input type="text" class="input-xlarge" id="input01" value="555 555 555" />
+								<input type="text" class="input-xlarge" id="input01" value="<?php echo $user->phone; ?>" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label" for="input01">Email</label>
 							<div class="controls">
-								<input type="text" class="input-xlarge" id="input01" value="john.smith@example.org" />
+								<input type="text" class="input-xlarge" id="input01" value="<?php echo $user->email; ?>" />
 							</div>
 						</div>
 						<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Save</button> <button class="btn">Cancel</button>
+							<button type="submit" class="btn btn-primary">Update</button>
 						</div>
 					</fieldset>
 				</form>

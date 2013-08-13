@@ -1,12 +1,16 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
 	<div class="navbar-inner">
-
+<div class="container">
 			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> 
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> 
 			<span class="icon-bar"></span> 
 			</a> 
-			<a class="brand"><small>&nbsp;9:15pm Monday, August 3rd 2013</small></a>
+			<a class="brand"><small>
+			<?php 
+			$date = new DateTime('now', new DateTimeZone('America/Chicago'));
+			echo $date->format('g:ia m/d/Y');
+			?></small></a>
 			
 			<div class="nav-collapse">
 				<!--<ul class="nav">
@@ -96,6 +100,7 @@
 					
 					
 				</ul>
+			</div>
 			</div>
 		</div>
 	</div>

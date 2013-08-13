@@ -16,6 +16,53 @@
 							<a href="help" class="btn btn-primary btn-large">Start Tour</a> <a class="btn btn-large">No Thanks</a>
 						</p>
 					</div>
+					
+					
+					<h3>Children</h3>
+					<div class="row">
+						
+						<div class="span3">
+							<div class="media">
+								<a class="" href="#">
+									<img class="media-object" src="http://placehold.it/160x120">
+								</a>
+								<div class="media-body">
+									<h4>First Last</h4>
+								</div>
+							</div>
+							<p class="text-info">open calendar in modal</p>
+							<?php echo $calendar; ?>
+						</div>
+						
+						<div class="span3">
+							<div class="media">
+								<a class="" href="#">
+									<img class="media-object" src="http://placehold.it/160x120">
+								</a>
+								<div class="media-body">
+									<h4>First Last</h4>
+								</div>
+							</div>
+						</div>
+
+						<div class="span3">
+							<div class="media">
+								<a class="" href="#">
+									<img class="media-object" src="http://placehold.it/160x120">
+								</a>
+								<div class="media-body">
+									<h4>First Last</h4>
+								</div>
+							</div>
+						</div>
+
+
+						
+					</div>
+					
+								
+					
+					
 					<h2>
 						Schedule
 					</h2>

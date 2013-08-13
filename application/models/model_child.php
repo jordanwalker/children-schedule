@@ -5,7 +5,9 @@ class Model_child extends MY_Model {
     function __construct() {
         parent::__construct();
     }
-	function create(){}
+	function create($message){
+		$this->db->insert($message);
+	}
 	function read(){}
 	function update(){}
 	function delete(){}

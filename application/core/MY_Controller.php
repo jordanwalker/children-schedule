@@ -21,6 +21,7 @@ class MY_Controller extends CI_Controller {
 		$this->data['script'] = array(
 			base_url().'bootstrap/docs/assets/js/jquery.js',
 			base_url().'bootstrap/docs/assets/js/bootstrap.min.js',
+			base_url().'assets/js/main.js',
 		);
 		/* template */
 		$this->data['head_title'] = array();
