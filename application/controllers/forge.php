@@ -231,8 +231,50 @@ class Forge extends MY_Controller {
 		$this->dbforge->add_key('id_child');
 		return $this->dbforge->create_table('watch',TRUE);
 	}
-
-
+	
+	/*
+	 * REST 
+	 */
+	
+	#keys
+	private function forge_keys(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'key' => array('type'=>'varchar','constraint'=>'40','null'=>false),
+			'level'=> array('type'=>'int','constraint'=>'2','null'=>false, 'auto_increment' => false),
+			'ignore_limits'=> array('type'=>'tinyint','constraint'=>'1','null'=>false, 'default'=> 0 ),
+			'is_private_key'=> array('type'=>'tinyint','constraint'=>'1','null'=>false, 'default'=> 0 ),
+			'ip_addresses'=> array('type'=>'text','null'=>true),
+			'date_created'=> array('type'=>'int','constraint'=>'11','null'=>false,),
+		);
+	
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+		
+		return $this->dbforge->create_table('keys',TRUE);
+	}
+	
+	#logs
+	private function forge_logs(){
+		$this->load->dbforge();
+		$database_objects = array(
+			'id'=> array('type'=>'int','constraint'=>'12','null'=>false, 'auto_increment' => TRUE),
+			'uri' => array('type'=>'varchar','constraint'=>'255','null'=>false),
+			'method' => array('type'=>'varchar','constraint'=>'6','null'=>false),				
+			'params'=> array('type'=>'text','null'=>true),
+			'api_key' => array('type'=>'varchar','constraint'=>'40','null'=>false),
+			'ip_address'=> array('type'=>'varchar','constraint'=>'45','null'=>false),
+			'time'=> array('type'=>'int','constraint'=>'11','null'=>false),
+			'authorized'=> array('type'=>'tinyint','constraint'=>'1','null'=>false),
+		);
+	
+		$this->dbforge->add_field($database_objects);
+		$this->dbforge->add_key('id');
+	
+		return $this->dbforge->create_table('logs',TRUE);
+	}
+	
 	/*
 	 * TABLE UTILITY
 	 */

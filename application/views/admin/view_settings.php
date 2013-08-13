@@ -16,7 +16,9 @@
 								<label class="control-label" for="input01">REST Key</label>
 								<div class="controls">
 									<input type="text" class="span6" id="input01" value="$v^Y2Il4%lC%xIA7HCxYmL(J#qSA3SJ2fQk2ICjf" disabled="disabled" />
-									<p class="help-block">This is your API key.</p>
+									<p class="help-block">This is your API key. <a id="generateKey" class="btn btn-mini">regenerate</a></p>
+									
+									
 								</div>
 							</div>
 							

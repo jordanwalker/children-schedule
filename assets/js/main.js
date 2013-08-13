@@ -47,7 +47,7 @@ $('document').ready(function(){
 			  type: "POST",
 			  url: BASE_URL + "api/child/create/",
 			  data: { 
-				'key':'$v^Y2Il4%lC%xIA7HCxYmL(J#qSA3SJ2fQk2ICjf',
+				'X-API-KEY':'$v^Y2Il4%lC%xIA7HCxYmL(J#qSA3SJ2fQk2ICjf',
 				'name':name,
 				'birthday':yyyy_birthday+'/'+mm_birthday+'/'+dd_birthday,
 				'gender':gender,
@@ -64,7 +64,21 @@ $('document').ready(function(){
 		}
 	});
 	
+	/* /admin/settings */
 	
+	$("#generateKey").on('click',function(){
+		console.log('generate key');
+		$.ajax({
+			  type: "PUT",
+			  url: BASE_URL + "api/key/",
+			  data: { 
+				
+				}
+			}).done(function( msg ) {
+			  console.log(msg);
+			});
+		
+	});
 	
 	
 	

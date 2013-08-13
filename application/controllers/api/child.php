@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 require APPPATH.'/libraries/REST_Controller.php';
+
 class Child extends REST_Controller {
 	/*
 	 * create
@@ -10,7 +11,9 @@ class Child extends REST_Controller {
     }
 	function create_post(){
 		$package = array(
-			'key'=>$this->post('key'),
+			'id'=>'',
+			'unique'=>'123w',
+			//'key'=>$this->post('X-API-KEY'),
 			'name'=>$this->post('name'),
 			'birthday'=>$this->post('birthday'),
 			'gender'=>$this->post('gender'),

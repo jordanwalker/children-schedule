@@ -14,6 +14,8 @@
 
 // This can be removed if you use __autoload() in config.php
 require(APPPATH.'/libraries/REST_Controller.php');
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 class Key extends REST_Controller
 {
@@ -194,7 +196,7 @@ class Key extends REST_Controller
 	
 	private function _generate_key()
 	{
-		//$this->load->helper('security');
+		$this->load->helper('security');
 		
 		do
 		{
